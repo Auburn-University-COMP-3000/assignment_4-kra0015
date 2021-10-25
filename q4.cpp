@@ -8,6 +8,7 @@ class Month
 {
 private:
   int mnth;
+
 public:
   Month(); 
   Month(char c1, char c2, char c3) {
@@ -76,7 +77,7 @@ public:
     else if (c1 == 'd' && c2 == 'e' && c3 == 'c')
       mnth = 12;
     else {
-      cout << c1 << c2 << c3 << " is not a month.";
+      cout << c1 << c2 << c3 << " is not a month. ";
     }  
   }   
   void outputMonthNumber(ostream& out) { 
@@ -95,6 +96,7 @@ public:
     else if (mnth == 10) out << "Oct";
     else if (mnth == 11) out << "Nov";
     else if (mnth == 12) out << "Dec";
+    else out << "Please enter a valid number for a month. ";
   }
   Month nextMonth(istream& in) {
     in >> mnth;
@@ -165,6 +167,7 @@ int main() {
     m1.getMonthByName(cin);
     cout << "The result of the three letter month input is: ";
     m1.outputMonthNumber(cout); cout << endl;
+    
     i++;
   }
     
